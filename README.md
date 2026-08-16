@@ -60,7 +60,7 @@ El componente `About.tsx` sigue existiendo pero no se renderiza en `App.tsx` (se
 
 ## CV
 
-El botón "Descargar CV" apunta a `public/cv.pdf`. Ese archivo **no está incluido en el repo** — hay que agregar el PDF real en esa ruta para que el link funcione; mientras tanto el botón queda visible pero rota a un 404.
+El botón "Descargar CV" apunta a `public/cv.pdf`. Para reemplazarlo, pisar ese archivo con el PDF actualizado (mismo nombre y ruta).
 
 ## Deploy
 
