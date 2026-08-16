@@ -4,15 +4,15 @@
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-ink: #0a0a0f;
-  --color-ink-soft: #131318;
-  --color-ink-card: #17171f;
-  --color-paper: #f5f3ef;
-  --color-muted: #9a9aa8;
-  --color-line: rgba(245, 243, 239, 0.1);
-  --color-accent: #ff8a3d;
-  --color-accent-soft: #ffb27a;
-  --color-accent-dim: #7a4322;
+  --color-ink: #0d0a14;
+  --color-ink-soft: #16101f;
+  --color-ink-card: #1c1329;
+  --color-paper: #f6f3ff;
+  --color-muted: #a89cc4;
+  --color-line: rgba(196, 181, 253, 0.14);
+  --color-accent: #7c3aed;
+  --color-accent-soft: #c4b5fd;
+  --color-accent-dim: #4c2a8c;
 }
 
 html {
@@ -28,5 +28,10 @@ body {
 
 ::selection {
   background-color: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.cursor-none-custom,
+.cursor-none-custom * {
+  cursor: none !important;
 }

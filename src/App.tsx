@@ -1,18 +1,18 @@
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
-import { About } from "./components/About";
 import { ProjectsList } from "./components/ProjectsList";
 import { Stack } from "./components/Stack";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { Cursor } from "./components/Cursor";
 
 function App() {
   return (
     <>
+      <Cursor />
       <Nav />
       <main>
         <Hero />
-        <About />
         <ProjectsList />
         <Stack />
         <Contact />

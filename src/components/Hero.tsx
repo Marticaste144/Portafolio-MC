@@ -47,7 +47,7 @@ export function Hero() {
         >
           <button
             onClick={scrollToWork}
-            className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-transform hover:scale-105"
+            className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-transform hover:scale-105"
           >
             Ver proyectos
           </button>
@@ -76,8 +76,7 @@ export function Hero() {
             {profile.cvUrl && (
               <a
                 href={profile.cvUrl}
-                target="_blank"
-                rel="noreferrer"
+                download
                 className="underline decoration-line underline-offset-4 transition-colors hover:text-accent"
               >
                 CV

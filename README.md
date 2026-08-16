@@ -40,7 +40,27 @@ Solo un proyecto debería tener `featured: true` a la vez (va primero y más gra
 
 ## Datos personales
 
-Editar `src/data/profile.ts` para actualizar nombre, tagline, texto de "sobre mí", email, links (LinkedIn/GitHub/CV) y el stack agrupado por categoría. `linkedinUrl`, `githubUrl` y `cvUrl` están vacíos por defecto — al completarlos aparecen automáticamente en el Hero y en Contacto.
+Editar `src/data/profile.ts` para actualizar nombre, tagline, texto de "sobre mí" (no se renderiza actualmente, ver abajo), contacto y el stack agrupado por categoría.
+
+Campos del objeto `profile`:
+
+- `email`: se usa para armar el link de Gmail en Contacto (`https://mail.google.com/mail/?view=cm&fs=1&to=...`), no un `mailto:`.
+- `phone`: solo dígitos, sin `0` ni `15` (ej. `"2344504300"`). Se usa para armar el link de WhatsApp (`https://wa.me/549<phone>`) y se muestra formateado como `+54 9 XXXX XXXXXX`. Asume número argentino; si cambia el país hay que ajustar el prefijo en `Contact.tsx`.
+- `linkedinUrl`, `githubUrl`: opcionales — si están vacíos, el link correspondiente no se renderiza ni en el Hero ni en Contacto.
+- `cvUrl`: ruta al PDF (ej. `"/cv.pdf"`, sirviéndose desde `public/cv.pdf`). El botón "Descargar CV" solo aparece si este campo no está vacío.
+- `languages`: array de `{ name, level, value }`, donde `value` es de 0 a 4 y controla cuántos segmentos de la barra de nivel se rellenan en la sección Idiomas (dentro de Stack).
+
+## Sección "Sobre mí"
+
+El componente `About.tsx` sigue existiendo pero no se renderiza en `App.tsx` (se sacó del sitio y del `Nav`). Si se vuelve a agregar, mantener el copy genérico: no nombrar proyectos puntuales (ej. "MUV") fuera de sus propias project cards.
+
+## Cursor personalizado
+
+`src/components/Cursor.tsx` reemplaza el cursor del sistema en desktop por un anillo punteado con leve delay (spring) y un punto central, que se agranda y cambia de color al pasar sobre links, botones o project cards (`data-cursor-hover`). Se desactiva automáticamente en dispositivos táctiles vía `matchMedia("(pointer: coarse)")`.
+
+## CV
+
+El botón "Descargar CV" apunta a `public/cv.pdf`. Ese archivo **no está incluido en el repo** — hay que agregar el PDF real en esa ruta para que el link funcione; mientras tanto el botón queda visible pero rota a un 404.
 
 ## Deploy
 

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useActiveSection } from "../hooks/useActiveSection";
 
 const LINKS = [
-  { id: "about", label: "Sobre mí" },
   { id: "work", label: "Proyectos" },
   { id: "stack", label: "Stack" },
   { id: "contact", label: "Contacto" },

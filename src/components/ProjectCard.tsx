@@ -59,6 +59,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Reveal>
       <article
+        data-cursor-hover
         className={`group grid gap-8 rounded-3xl border border-line bg-ink-card/50 p-6 transition-colors hover:border-accent-dim sm:p-8 md:grid-cols-5 md:items-center ${
           featured ? "md:p-10" : ""
         }`}

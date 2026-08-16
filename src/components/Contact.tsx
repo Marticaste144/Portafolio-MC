@@ -1,9 +1,18 @@
 import { profile } from "../data/profile";
 import { Reveal } from "./Reveal";
 
+const formatPhone = (phone: string) =>
+  `+54 9 ${phone.slice(0, 4)} ${phone.slice(4)}`;
+
 export function Contact() {
+  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}`;
+  const whatsappUrl = `https://wa.me/549${profile.phone}`;
+
   const links = [
-    { label: profile.email, href: `mailto:${profile.email}` },
+    { label: profile.email, href: gmailComposeUrl },
+    profile.phone
+      ? { label: formatPhone(profile.phone), href: whatsappUrl }
+      : null,
     profile.linkedinUrl ? { label: "LinkedIn", href: profile.linkedinUrl } : null,
     profile.githubUrl ? { label: "GitHub", href: profile.githubUrl } : null,
   ].filter(Boolean) as { label: string; href: string }[];
@@ -31,13 +40,23 @@ export function Contact() {
               <a
                 key={link.href}
                 href={link.href}
-                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full border border-line px-6 py-3 text-sm font-medium text-paper transition-colors hover:border-accent hover:text-accent"
               >
                 {link.label}
               </a>
             ))}
+
+            {profile.cvUrl && (
+              <a
+                href={profile.cvUrl}
+                download
+                className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-paper transition-transform hover:scale-105"
+              >
+                Descargar CV
+              </a>
+            )}
           </div>
         </Reveal>
       </div>

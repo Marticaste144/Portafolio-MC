@@ -33,6 +33,36 @@ export function Stack() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2}>
+          <div className="mt-20 border-t border-line pt-12">
+            <h3 className="text-sm font-semibold tracking-wide text-muted uppercase">
+              Idiomas
+            </h3>
+            <ul className="mt-6 grid gap-6 sm:grid-cols-3">
+              {profile.languages.map((lang) => (
+                <li key={lang.name} className="flex flex-col gap-2">
+                  <div className="flex items-baseline justify-between">
+                    <span className="font-display text-lg text-paper">
+                      {lang.name}
+                    </span>
+                    <span className="text-xs text-muted">{lang.level}</span>
+                  </div>
+                  <div className="flex gap-1.5">
+                    {Array.from({ length: 4 }).map((_, i) => (
+                      <span
+                        key={i}
+                        className={`h-1.5 flex-1 rounded-full ${
+                          i < lang.value ? "bg-accent" : "bg-ink-soft"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
