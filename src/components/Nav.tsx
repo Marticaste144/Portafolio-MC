@@ -18,7 +18,7 @@ export function Nav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-ink/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <a
           href="#hero"
           onClick={(e) => {
@@ -61,7 +61,7 @@ export function Nav() {
       </nav>
 
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-line px-6 pb-6 md:hidden">
+        <ul className="flex flex-col gap-1 border-t border-line px-4 pb-6 sm:px-6 md:hidden">
           {LINKS.map((link) => (
             <li key={link.id}>
               <button

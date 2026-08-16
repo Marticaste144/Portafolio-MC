@@ -35,3 +35,33 @@ body {
 .cursor-none-custom * {
   cursor: none !important;
 }
+
+.hero-blob {
+  position: absolute;
+  filter: blur(64px);
+  mix-blend-mode: screen;
+  will-change: transform;
+  animation: hero-blob-float 26s ease-in-out infinite;
+}
+
+@keyframes hero-blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+  }
+  33% {
+    transform: translate(4%, -6%) scale(1.08);
+    border-radius: 60% 40% 40% 60% / 50% 60% 40% 50%;
+  }
+  66% {
+    transform: translate(-3%, 5%) scale(0.95);
+    border-radius: 40% 60% 55% 45% / 55% 40% 60% 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob {
+    animation: none;
+  }
+}

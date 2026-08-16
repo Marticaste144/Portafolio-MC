@@ -9,8 +9,23 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col justify-center px-6 pt-24 sm:px-8"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 pt-24 sm:px-8"
     >
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div
+          className="hero-blob -top-48 -left-56 h-[32rem] w-[32rem] bg-accent/15"
+          style={{ animationDelay: "-2s" }}
+        />
+        <div
+          className="hero-blob -top-20 -right-48 h-[30rem] w-[30rem] bg-accent-soft/10"
+          style={{ animationDelay: "-11s" }}
+        />
+        <div
+          className="hero-blob -bottom-56 left-1/3 h-[30rem] w-[30rem] bg-accent-dim/20"
+          style={{ animationDelay: "-19s" }}
+        />
+      </div>
+
       <div className="mx-auto w-full max-w-6xl">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
