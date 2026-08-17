@@ -20,13 +20,19 @@ export const projects: Project[] = [
     category: "Plataforma Web / Producción",
     year: "2025–2026",
     description:
-      "Plataforma full-stack que diseñé y desarrollé por iniciativa propia, y que le ofrecí a una profesora de gimnasia postural real. Incluye gestión de turnos, pagos con Mercado Pago (webhook funcionando en producción), notificaciones por email, reportes en PDF, exportación CSV y panel de administración.",
-    role: "Diseño, desarrollo full-stack, deploy y mantenimiento en producción — proyecto propio de punta a punta.",
+      "Plataforma web para la gestión de turnos de clases de gimnasia postural, con pagos integrados vía Mercado Pago —webhook funcionando en producción, con pagos reales confirmados— y notificaciones automáticas por email a través de Resend. Incluye generación de reportes en PDF, exportación de datos en CSV y un panel de administración para gestionar alumnos y clases. Desplegada en producción con dominio propio, sobre Vercel y con Supabase como backend.",
+    role: "Diseño, desarrollo full-stack, deploy y mantenimiento en producción.",
     status: "En producción, con dominio propio y pagos reales confirmados.",
     stack: ["Next.js", "TypeScript", "Supabase", "Mercado Pago API", "Resend", "Vercel"],
     liveUrl: undefined,
     repoUrl: undefined,
-    images: [],
+    images: [
+      "/projects/muv/01-login.png",
+      "/projects/muv/02-registro.png",
+      "/projects/muv/03-inicio.png",
+      "/projects/muv/04-mis-clases.png",
+      "/projects/muv/05-mi-cuota.png",
+    ],
     featured: true,
   },
   {

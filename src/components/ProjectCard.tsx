@@ -1,14 +1,12 @@
-import { useState } from "react";
 import type { Project } from "../data/projects";
 import { Reveal } from "./Reveal";
+import { Carousel } from "./Carousel";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 function ProjectVisual({ project }: { project: Project }) {
-  const [activeImage, setActiveImage] = useState(0);
-
   if (project.images.length === 0) {
     return (
       <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl border border-line bg-gradient-to-br from-ink-card to-ink-soft">
@@ -23,34 +21,7 @@ function ProjectVisual({ project }: { project: Project }) {
     );
   }
 
-  return (
-    <div className="w-full">
-      <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-ink-soft">
-        <img
-          src={project.images[activeImage]}
-          alt={`Captura de ${project.title}`}
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-      </div>
-      {project.images.length > 1 && (
-        <div className="mt-3 flex gap-2">
-          {project.images.map((img, i) => (
-            <button
-              key={img}
-              onClick={() => setActiveImage(i)}
-              className={`h-14 w-14 overflow-hidden rounded-lg border transition-opacity ${
-                i === activeImage ? "border-accent" : "border-line opacity-60 hover:opacity-100"
-              }`}
-              aria-label={`Ver captura ${i + 1}`}
-            >
-              <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+  return <Carousel images={project.images} alt={project.title} />;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
