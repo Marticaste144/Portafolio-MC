@@ -29,7 +29,7 @@ export function Carousel({ images, alt }: CarouselProps) {
 
   return (
     <div className="w-full">
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-ink-soft">
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-line bg-ink-soft">
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
             key={index}
@@ -45,7 +45,7 @@ export function Carousel({ images, alt }: CarouselProps) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: direction >= 0 ? -60 : 60, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 h-full w-full cursor-grab object-cover object-top active:cursor-grabbing"
+            className="absolute inset-0 h-full w-full cursor-grab object-contain active:cursor-grabbing"
           />
         </AnimatePresence>
 

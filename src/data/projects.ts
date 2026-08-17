@@ -43,15 +43,21 @@ export const projects: Project[] = [
   {
     id: "clinica-veterinaria-la-plata",
     title: "Clínica Veterinaria La Plata",
-    category: "Prototipo Académico",
+    category: "Plataforma Web",
     year: "2026",
     description:
-      "Prototipo navegable de sitio web para una veterinaria, desarrollado como proyecto académico siguiendo una metodología propia de documentación completa antes de programar. Sistema de diseño propio con paleta violeta/blanco/teal y tipografías Quicksand + Nunito.",
-    role: "Diseño del sistema visual, arquitectura de componentes y desarrollo del sitio público.",
+      "Sitio web para una clínica veterinaria, con sistema de diseño propio en paleta violeta/blanco/teal y tipografías Quicksand + Nunito. Incluye reserva de turnos online, un catálogo de servicios con precio y duración estimada, y un pet shop navegable sin necesidad de cuenta, con filtros por categoría, especie y marca y carrito de compras. Suma un sistema de cuentas de usuario con panel de cliente para ver turnos, mascotas y pedidos.",
+    role: "Diseño del sistema visual, arquitectura de componentes y desarrollo del sitio.",
     stack: ["React", "TypeScript", "Vite", "React Router"],
     liveUrl: undefined,
     repoUrl: undefined,
-    images: [],
+    images: [
+      "/projects/veterinaria/01-inicio.png",
+      "/projects/veterinaria/02-servicios.png",
+      "/projects/veterinaria/03-pet-shop.png",
+      "/projects/veterinaria/04-login.png",
+      "/projects/veterinaria/05-dashboard-cliente.png",
+    ],
     featured: false,
   },
 ];

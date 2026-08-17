@@ -9,7 +9,7 @@ interface ProjectCardProps {
 function ProjectVisual({ project }: { project: Project }) {
   if (project.images.length === 0) {
     return (
-      <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl border border-line bg-gradient-to-br from-ink-card to-ink-soft">
+      <div className="flex aspect-video w-full items-center justify-center rounded-2xl border border-line bg-gradient-to-br from-ink-card to-ink-soft">
         <span className="font-display text-6xl font-extrabold text-line select-none">
           {project.title
             .split(" ")
